@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- LIST  de alumnos -->
+    <record id="view_alumnos_list" model="ir.ui.view">
+        <field name="name">alumnos.alumnos.list</field>
+        <field name="model">alumnos.alumnos</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="foto" widget="image" class="oe_avatar"
+                        options="{'size': [32, 32]}"/>
+                <field name="nombre"/>
+                <field name="apellidos"/>
+                <field name="modulos_ids" widget="many2many_tags"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- FORM de alumnos -->
+    <record id="view_alumnos_form" model="ir.ui.view">
+        <field name="name">alumnos.alumnos.form</field>
+        <field name="model">alumnos.alumnos</field>
+        <field name="arch" type="xml">
+            <form string="Alumno">
+                <sheet>
+                    <group>
+                        <field name="foto" widget="image" class="oe_avatar"/>
+                        <group>
+                            <field name="nombre"/>
+                            <field name="apellidos"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <!-- Opción 1: matrícula con TAGS -->
+                        <page string="Matrícula (tags)">
+                            <group>
+                                <field name="modulos_ids"
+                                       widget="many2many_tags"
+                                       placeholder="Selecciona módulos..."
+                                       options="{'no_create_edit': True}"/>
+                            </group>
+                        </page>
+
+                        <!-- Opción 2: matrícula en TABLA editable -->
+                        <!--
+                        <page string="Matrícula (tabla)">
+                            <field name="modulos_ids">
+                                <list editable="bottom">
+                                    <field name="nombre"/>
+                                    <field name="descripcion"/>
+                                </list>
+                            </field>
+                        </page>
+                        -->
+                    </notebook>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>
+

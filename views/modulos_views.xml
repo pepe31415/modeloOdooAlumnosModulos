@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- LIST de módulos -->
+    <record id="view_modulos_list" model="ir.ui.view">
+        <field name="name">alumnos.modulos.list</field>
+        <field name="model">alumnos.modulos</field>
+        <field name="arch" type="xml">
+            <list string="Módulos">
+                <field name="nombre"/>
+                <field name="descripcion"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- FORM de módulos -->
+    <record id="view_modulos_form" model="ir.ui.view">
+        <field name="name">alumnos.modulos.form</field>
+        <field name="model">alumnos.modulos</field>
+        <field name="arch" type="xml">
+            <form string="Módulo">
+                <sheet>
+                    <group>
+                        <field name="nombre"/>
+                        <field name="descripcion"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

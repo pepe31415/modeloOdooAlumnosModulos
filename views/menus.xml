@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Acciones -->
+    <record id="action_alumnos" model="ir.actions.act_window">
+        <field name="name">Alumnos</field>
+        <field name="res_model">alumnos.alumnos</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_modulos" model="ir.actions.act_window">
+        <field name="name">Módulos</field>
+        <field name="res_model">alumnos.modulos</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- Menús -->
+    <menuitem id="menu_alumnos_root" name="Gestión Alumnos" sequence="10"/>
+    <menuitem id="menu_alumnos_alumnos" name="Alumnos" parent="menu_alumnos_root" action="action_alumnos" sequence="10"/>
+    <menuitem id="menu_alumnos_modulos" name="Módulos" parent="menu_alumnos_root" action="action_modulos" sequence="20"/>
+
+</odoo>
